@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Raúl Naharro: información sobre la ayuda del Programa Cantabria FSE+ 2021-2027 para impulsar el empleo autónomo joven.">
+  <title>Raúl Naharro | Empleo autónomo joven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f4f2;
+      --white: #ffffff;
+      --ink: #171a1e;
+      --muted: #62676d;
+      --orange: #f08a3c;
+      --red: #d75144;
+      --blue: #193b73;
+      --line: #dfdfdc;
+      --sans: "Montserrat", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .topbar {
+      width: 100%;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: max(32px, calc((100% - 1160px) / 2));
+      background: var(--ink);
+      color: var(--white);
+    }
+    .wordmark {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.1;
+    }
+    .wordmark small {
+      display: block;
+      margin-top: 4px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 35px;
+      aspect-ratio: 1;
+      color: var(--white);
+      background: linear-gradient(140deg, #f3a04a, #e25147 54%, #7e42c4);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: #f0f0ef;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    nav a:hover, nav a:focus-visible { color: var(--red); }
+    .nav-action {
+      padding: 11px 17px;
+      border: 1px solid #92969a;
+      color: var(--white);
+    }
+    .hero {
+      position: relative;
+      isolation: isolate;
+      width: 100%;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 80px max(32px, calc((100% - 1160px) / 2));
+      color: var(--white);
+      background: #111519;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(13, 17, 21, .94) 0%, rgba(13, 17, 21, .74) 48%, rgba(13, 17, 21, .28) 100%);
+      content: "";
+    }
+    .hero > .reveal:first-child {
+      position: relative;
+      z-index: 1;
+      width: min(760px, 100%);
+    }
+    .eyebrow {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin: 0 0 23px;
+      color: #ffad72;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 29px; height: 2px; background: var(--orange); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 20px;
+      font-family: var(--sans);
+      font-size: clamp(46px, 6vw, 72px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    h1 em { color: #ffad72; font-style: normal; }
+    .hero-copy {
+      max-width: 570px;
+      margin-bottom: 28px;
+      color: #e0e2e3;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    .hero-link {
+      display: inline-flex;
+      gap: 16px;
+      align-items: center;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--orange);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .hero-link span { color: #ffad72; font-size: 18px; }
+    .hero-image {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      overflow: hidden;
+      background: #282b2f;
+    }
+    .hero-image img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+      object-position: center 42%;
+    }
+    .image-note {
+      display: none;
+    }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .promo-data {
+      padding-block: 56px 0;
+    }
+    .promo-data h2 {
+      margin-bottom: 24px;
+      font-size: 34px;
+    }
+    .fact { min-height: 164px; padding: 27px 34px 25px; }
+    .fact + .fact { border-left: 1px solid var(--line); }
+    .fact-label {
+      display: block;
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .fact strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 37px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .fact p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .details {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 90px;
+      padding-block: 100px 94px;
+    }
+    .section-kicker {
+      margin-bottom: 15px;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .details-intro { max-width: 315px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .detail-block { padding-block: 0 27px; border-bottom: 1px solid var(--line); }
+    .detail-block + .detail-block { padding-top: 24px; }
+    .detail-block h3 { margin-bottom: 9px; color: var(--red); font-size: 15px; font-weight: 700; }
+    .detail-block p { margin-bottom: 0; color: #444640; font-size: 15px; line-height: 1.75; }
+    .period {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--orange);
+      background: #eeece4;
+      font-size: 13px;
+    }
+    .period strong { color: var(--ink); }
+    .period span { color: var(--muted); }
+    .about {
+      padding-block: 76px;
+      background: #e8e9e9;
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .about h2 { max-width: 380px; }
+    .about-copy { max-width: 670px; }
+    .about-copy p { color: #454a4e; font-size: 15px; line-height: 1.8; }
+    .about-tagline { color: var(--red) !important; font-weight: 700; }
+    .about-link {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 12px 17px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .funding {
+      padding-block: 24px;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+    }
+    .funding-inner {
+      display: block;
+    }
+    .funding-banner {
+      display: block;
+      width: 100%;
+      max-width: 980px;
+      height: auto;
+      margin-inline: auto;
+    }
+    footer { padding-block: 19px; background: var(--ink); color: #e9e6de; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; font-size: 11px; }
+    footer p { margin: 0; }
+    .reveal { animation: rise .7s both; }
+    .hero-image.reveal { animation-delay: .12s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(calc(100% - 38px), 540px); }
+      .topbar { min-height: 70px; padding-inline: 19px; }
+      nav { gap: 15px; }
+      nav a { display: none; }
+      .hero { min-height: 570px; padding: 58px 25px; }
+      h1 { max-width: 500px; font-size: 48px; }
+      .hero-copy { font-size: 16px; }
+      .hero-image { min-height: 0; }
+      .facts { grid-template-columns: 1fr; }
+      .promo-data { padding-block: 42px 0; }
+      .promo-data h2 { font-size: 31px; }
+      .fact { min-height: auto; padding: 21px 23px; }
+      .fact + .fact { border-top: 1px solid var(--line); border-left: 0; }
+      .fact-label { margin-bottom: 10px; }
+      .fact strong { font-size: 33px; }
+      .details { grid-template-columns: 1fr; gap: 30px; padding-block: 66px; }
+      h2 { max-width: 430px; font-size: 38px; }
+      .details-intro { max-width: 450px; }
+      .funding { padding-block: 18px; }
+      .about { padding-block: 58px; }
+      .about-inner { grid-template-columns: 1fr; gap: 20px; }
+      .footer-inner { flex-direction: column; gap: 7px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+    @media (max-width: 380px) {
+      .wrap { width: calc(100% - 32px); }
+      .topbar { padding-inline: 16px; }
+      h1 { font-size: 34px; }
+      .hero { min-height: 520px; padding-inline: 16px; }
+      .hero-copy { font-size: 14px; }
+      .fact { padding-inline: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#inicio" aria-label="Raúl Naharro, inicio">
+      <span class="mark" aria-hidden="true">RN</span>
+      <span>RAÚL NAHARRO<small>VÍDEO PROFESIONAL</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#ayuda">Datos promoción</a>
+      <a href="#programa">El programa</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a class="nav-action" href="#financiacion">Financiación</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="reveal">
+        <p class="eyebrow">Programa Cantabria FSE+ 21-27</p>
+        <h1 id="hero-title">Promoción del empleo <em>autónomo joven</em></h1>
+        <p class="hero-copy">Una subvención para incentivar el alta de jóvenes emprendedores por cuenta propia en Cantabria.</p>
+        <a class="hero-link" href="#ayuda">Consulta los detalles de la ayuda <span aria-hidden="true">&#8595;</span></a>
+      </div>
+      <div class="hero-image reveal">
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=85" alt="Equipo de producción audiovisual en un rodaje" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="promo-data" id="ayuda" aria-labelledby="promo-title">
+      <div class="wrap">
+        <h2 id="promo-title">Datos promoción</h2>
+        <div class="facts" aria-label="Datos principales de la ayuda">
+          <div class="fact">
+            <span class="fact-label">Subvención</span>
+            <strong>9.000 €</strong>
+            <p>Importe de la ayuda</p>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Financiación de la UE</span>
+            <strong>5.400 €</strong>
+            <p>El 60 % de la subvención</p>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Duración</span>
+            <strong>3 años</strong>
+            <p>Desde el alta en Seguridad Social o mutualidad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap details" id="programa" aria-labelledby="details-title">
+      <div>
+        <p class="section-kicker">Programa Cantabria FSE+ 21-27</p>
+        <h2 id="details-title">Un impulso para empezar</h2>
+        <p class="details-intro">La ayuda promueve el empleo autónomo joven e incentiva el alta de personas emprendedoras que estaban en desempleo.</p>
+      </div>
+      <div>
+        <article class="detail-block">
+          <h3>Operación</h3>
+          <p>Promoción del empleo autónomo joven.</p>
+        </article>
+        <article class="detail-block">
+          <h3>Descripción</h3>
+          <p>Subvenciones a la promoción del empleo autónomo joven, incentivando el alta de personas emprendedoras en desempleo en el Régimen Especial de Trabajadores por Cuenta Propia o Autónomos de la Seguridad Social, o en cualquier otro régimen especial por cuenta propia de la Seguridad Social o en mutualidad de colegio profesional.</p>
+        </article>
+        <article class="detail-block">
+          <h3>Objetivo principal</h3>
+          <p>Esta operación tiene como objeto incentivar el alta de personas jóvenes emprendedoras.</p>
+        </article>
+        <div class="period"><strong>Periodo indicado en el programa</strong><span>12/2023 — 12/2026</span></div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="wrap about-inner">
+        <div>
+          <p class="section-kicker">Raúl Naharro</p>
+          <h2 id="about-title">Soy tu editor de vídeo profesional</h2>
+        </div>
+        <div class="about-copy">
+          <p>Con más de 9 años de experiencia en la industria audiovisual, me especializo en la creación de contenidos dinámicos y efectivos para diversas plataformas. Mi pasión por la narrativa visual y mi dominio de las últimas herramientas de edición me permiten transformar ideas en experiencias memorables. Desde la conceptualización hasta la entrega final, mi objetivo es superar las expectativas de mis clientes.</p>
+          <p class="about-tagline">Capturamos la esencia, creamos impacto.</p>
+          <a class="about-link" href="#programa">Más información de la ayuda</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="funding" id="financiacion" aria-label="Organismos financiadores y colaboradores">
+      <div class="wrap funding-inner">
+        <img class="funding-banner" src="Captura%20de%20pantalla%202026-10-06%20160015.png" alt="Cofinanciado por la Unión Europea, con el Ministerio de Trabajo y Economía Social, Fondos Europeos, Gobierno de Cantabria y Emcan">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>Raúl Naharro Ochoa · Editor de vídeo profesional</p>
+      <p>Programa Cantabria FSE+ 2021-2027</p>
+    </div>
+  </footer>
+</body>
+</html>
